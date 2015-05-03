@@ -1,7 +1,7 @@
 GIT
-  remote: https://github.com/rentpath/bunny_mock
-  revision: dea289c56643586d552e086e26dfc05b27f81e0d
-  ref: dea289c
+  remote: https://github.com/mtunski/bunny_mock
+  revision: bca0d38b5f2f6efa4a564b6ffc3a499e02f296cf
+  ref: bca0d38
   specs:
     bunny_mock (0.0.5)
 
