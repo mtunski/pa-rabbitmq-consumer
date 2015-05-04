@@ -1,0 +1,21 @@
+:sass
+  table
+    margin-top: 20px
+
+    *, &
+      border: 1px solid #000
+
+%table
+  %thead
+    %tr
+      %th UUID
+      %th Rates
+      %th Created
+      %th Updated
+  %tbody
+    - @currencies.each do |currency|
+      %tr
+        %td= currency.id
+        %td= currency.rates
+        %td= currency.created_at
+        %td= currency.updated_at

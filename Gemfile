@@ -10,6 +10,7 @@ gem 'turbolinks'
 gem 'jbuilder',     '~> 2.0'
 gem 'sneakers'
 gem 'bunny'
+gem 'haml-rails',   '~> 0.9'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 
