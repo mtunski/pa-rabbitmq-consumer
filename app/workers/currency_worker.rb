@@ -11,11 +11,9 @@ class CurrencyWorker
   private
 
   def update_or_create_currency(currency_json)
-    Currency.find_or_initialize_by(currency_json[:uuid]).tap do |currency|
+    Currency.find_or_initialize_by(id: currency_json[:uuid]).tap do |currency|
       currency.rates = currency_json[:rates]
       currency.save!
     end
   end
-
-  attr_accessor :retries
 end
