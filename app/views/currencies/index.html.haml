@@ -16,6 +16,6 @@
     - @currencies.each do |currency|
       %tr
         %td= currency.id
-        %td= currency.rates
+        %td= currency.rates.to_a[0...5]
         %td= currency.created_at
         %td= currency.updated_at
