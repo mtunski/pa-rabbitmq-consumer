@@ -17,7 +17,7 @@ class AcknowledgementPublisher
   attr_reader :currency_id, :connection
 
   def publish_acknowledgement
-    direct = connection.create_channel.direct('currencies.direct')
+    direct = connection.create_channel.direct('currencies.direct', durable: true)
 
     direct.publish({
       id:   ENV['QUEUE_ID'],
