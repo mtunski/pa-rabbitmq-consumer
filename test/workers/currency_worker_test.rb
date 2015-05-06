@@ -25,7 +25,7 @@ class CurrencyWorkerTest < ActiveSupport::TestCase
     assert_equal ({ 'eur' => 1 }), currency.rates
   end
 
-  def test_acks_when_successfull
+  def test_acks_when_successful
     @currency_worker.expects(:ack!).once
 
     @currency_worker.work({ id: 'uuid', rates: { eur: 1 } }.to_json)
