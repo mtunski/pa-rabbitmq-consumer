@@ -3,7 +3,11 @@ class CurrencyWorker
   from_queue "currencies.queue_#{ENV['QUEUE_ID']}"
 
   def work(msg)
-    currency = update_or_create_currency(JSON.parse(msg, symbolize_names: true))
+    begin
+      currency = update_or_create_currency(JSON.parse(msg, symbolize_names: true))
+    rescue ActiveRecord::ActiveRecordError
+      return reject!
+    end
 
     AcknowledgementPublisher.new(currency.id).call && ack!
   end
